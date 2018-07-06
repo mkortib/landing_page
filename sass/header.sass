@@ -1,0 +1,343 @@
+@import "bourbon"
+@import "vars.sass"
+
+body
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: em(22px)
+	font-family: "RalewayRegular", sans-serif
+	overflow-x: hidden
+	color: #333
+
+.hidden
+	display: none
+
+a, a:hover, a:focus, a:active
+	text-decoration: underline
+	color: $main-color
+
+.headers
+
+h1, h2, h3, h4, h5, h6
+	font-family: "PFCentroSlabProMedium", sans-serif
+	text-transform: uppercase
+	font-weight: normal
+	color: $headers-color
+	line-height: em(22px)
+
+h1
+	font-size: em(48px)
+	text-transform: none
+
+h2
+	font-size: em(30px)
+
+h3
+	font-size: em(24px)
+
+b, strong
+	font-family: "RalewayBold", sans-serif
+	font-size: em(15px)
+	font-weight: normal
+
+.ulmnu
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+
+.before
+	content: ''
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	position: absolute
+
+.main-head
+	min-height: 620px
+	background-size: cover
+	background-position: center
+	position: relative
+	padding-bottom: 120px
+	&::before
+		@extend .before
+		background: #394b5f
+		opacity: .85
+	h1
+		text-replace: none
+		line-height: em(18px)
+
+.top-line
+	padding-top: 45px
+	min-height: 160px
+	background-image: url(../img/top_gradient.png)
+	background-repeat: repeat-x
+
+.logo
+	img
+		width: 100px
+		opacity: .95
+
+.main-mnu
+	font-size: em(15px)
+	li
+		line-height: 48px
+		padding: 0 10px
+		&.active
+			a
+				text-decoration: underline
+				color: $main-color
+		a:hover
+			text-decoration: underline
+			color: $main-color
+	ul
+		@extend .ulmnu
+	a
+		text-decoration: none
+		color: #fff
+
+.phone-wrap
+	position: relative
+	.phone
+		cursor: pointer
+		font-family: "RobotoBold", sans-serif
+		color: #fff
+		opacity: .9
+		font-size: em(20px)
+		line-height: 48px
+		text-align: right
+		white-space: nowrap
+	.toggle-mnu
+		position: absolute
+		top: 0
+		right: 0	
+		line-height: 48px
+		text-align: center
+
+.toggle-mnu
+	display: block
+	width: 28px
+	height: 28px
+	margin: 22px auto 0
+
+.toggle-mnu span:after,
+.toggle-mnu span:before 
+	content: ""
+	position: absolute
+	left: 0
+	top: -9px
+
+.toggle-mnu span:after
+	top: 9px
+
+.toggle-mnu span 
+	position: relative
+	display: block
+
+
+.toggle-mnu span,
+.toggle-mnu span:after,
+.toggle-mnu span:before 
+	width: 100%
+	height: 2px
+	background-color: #fff
+	transition: all 0.3s
+	backface-visibility: hidden
+	border-radius: 2px
+
+
+/* on activation */
+.toggle-mnu.on span 
+	background-color: transparent
+
+.toggle-mnu.on span:before 
+	transform: rotate(45deg) translate(5px, 5px)
+
+.toggle-mnu.on span:after 
+	transform: rotate(-45deg) translate(7px, -8px)
+
+.toggle-mnu.on + #menu 
+	opacity: 1
+	visibility: visible
+
+.header-wrap
+	margin-top: 40px
+	h1
+		cursor: pointer
+		margin-top: 120px
+		color: #fff
+		border-bottom: $main-color 8px solid
+		display: inline-block
+		padding-bottom: 10px
+	ul
+		@extend .ulmnu
+		margin-top: 10px
+		li
+			display: block
+			font-family: "RalewaySemiBold", sans-serif
+			font-size: em(18px)
+			margin-bottom: 10px
+			position: relative
+			&::before
+				content: ''
+				width: 6px
+				height: 11px
+				display: block
+				+triangle(12px, $main-color, right)
+				position: absolute
+				top: 4px
+			a
+				display: block
+				color: #fff
+				padding-left: 18px
+				text-decoration: none
+			&:hover
+				text-decoration: underline
+
+.header-left
+	margin-bottom: 40px
+
+.forms
+	color: #97a4b2
+	background: transparentize(#2e3d4d, .2)
+	padding: 30px 35px
+	border-bottom: #1c242c 3px solid
+	font-size: em(14px)	
+	h4
+		font-family: "PFCentroSlabProMedium", sans-serif
+		color: #fff
+		font-size: em(33px)
+		margin: 0
+	p
+		margin-top: 18px
+		line-height: em(23px)
+	label
+		margin-top: 22px
+		margin-bottom: 10px
+		display: block
+		span
+			letter-spacing: 1.5px
+			display: block
+			margin-bottom: 6px
+			color: #808d9b
+	input
+		font-family: "PFCentroSlabProMedium", sans-serif
+		font-size: em(20px)
+		color: #fff
+		display: block
+		width: 100%
+		border: none
+		box-shadow: 0px -3px #1f2a36
+		background: #34465a
+		text-indent: 10px
+		padding: 10px 0px
+		transition: all .5s ease
+		&:focus
+			box-shadow: 0px -6px #1f2a36
+			background: lighten(#34465a, 5%)
+	.buttons
+		margin-top: 20px
+
+.button-wrap
+	text-align: center
+
+.buttons
+	display: inline-block
+	border: none
+	background: $main-color
+	color: #111
+	font-family: "PFCentroSlabProBold", sans-serif
+	font-size: em(22px)
+	padding: 15px 35px
+	border-bottom: darken($main-color, 15%) 3px solid
+	transition: all .5s ease
+	text-decoration: none
+	&:hover
+		background: lighten($main-color, 5%)
+		text-decoration: none
+		color: #111
+	&:active
+		background: darken($main-color, 5%)
+		text-decoration: none
+		color: #111
+	&:focus
+		color: #111
+		text-decoration: none
+
+.arrow-wrap
+	@extend .button-wrap
+	z-index: 2
+	position: relative
+	margin-top: 60px
+.arrow-bottom
+	display: inline-block
+	width: 40px
+	height: 40px
+	background-image: url(../img/arrow_down.png)
+	cursor: pointer
+	opacity: .6
+	transition: all .3s ease
+	&:hover
+		opacity: 1
+
+//preloader
+
+.preloader
+	&.done
+		opacity: 0
+		visibility: hidden
+	position: fixed
+	opacity: 1
+	visibility: visible
+	background: #394b5f
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	z-index: 9999
+
+@mixin opacity($opacity) 
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+
+.pulse 
+	position: relative
+	/* Temp Postioning */
+	left: 50%
+	margin-left: -40px
+	margin-top: 20%
+
+	&:before, &:after 
+		content: ''
+		border: 5px solid #f39f18
+		width: 80px
+		height: 80px
+		position: absolute
+		border-radius: 500px
+
+	&:before	
+		@include animation(pulse-outer 0.8s ease-in infinite)
+	&:after	
+		@include animation(pulse-inner 0.8s linear infinite)
+
+
+@include keyframes('pulse-outer') 
+	0%
+		@include opacity(100) 
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+
+@include keyframes('pulse-inner') 
+	0%
+		@include transform(scale(0))
+		@include opacity(0)
+	100%
+		@include transform(scale(1))
+		@include opacity(100)
